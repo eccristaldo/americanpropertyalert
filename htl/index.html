@@ -63,6 +63,7 @@
       font-weight: 800;
       letter-spacing: -.4px;
       color: #0f172a;
+      line-height: 1.1;
     }
 
     .brand-sub {
@@ -90,6 +91,7 @@
       line-height: 1.08;
       font-weight: 800;
       letter-spacing: -.6px;
+      overflow-wrap: break-word;
     }
 
     .subhead {
@@ -106,26 +108,28 @@
       border-bottom: 1px solid var(--line);
       padding-bottom: 14px;
       margin-bottom: 18px;
+      line-height: 1.5;
     }
 
     .img-ph {
       width: 100%;
       background: #edf1f5;
       border: 1px solid #cfd8e3;
-      color: #6b7280;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-      font-size: 14px;
-      font-weight: 700;
       border-radius: 4px;
       overflow: hidden;
+      margin: 20px 0;
     }
 
-    .hero { height: 420px; margin: 0 0 18px; }
-    .mid { height: 300px; margin: 20px 0; }
-    .small { height: 250px; margin: 20px 0; }
+    .img-ph img {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .hero { height: 420px; }
+    .mid { height: 300px; }
+    .small { height: 250px; }
 
     p {
       font-size: 20px;
@@ -184,7 +188,7 @@
     .good { color: var(--green); }
 
     ul {
-      margin: 0;
+      margin: 0 0 16px;
       padding-left: 24px;
     }
 
@@ -244,18 +248,78 @@
     }
 
     @media (max-width: 700px) {
-      .brand-name { font-size: 24px; }
-      h1 { font-size: 30px; }
-      .subhead { font-size: 20px; }
-      p, li, .row, .quote { font-size: 18px; }
-      .lead { font-size: 21px; }
-      h2 { font-size: 25px; }
-      .mini-title { font-size: 22px; }
-      .hero { height: 290px; }
-      .mid { height: 230px; }
-      .small { height: 210px; }
-      .content { padding: 14px; }
-      .cta-btn { font-size: 21px; }
+      .wrap {
+        padding: 0;
+      }
+
+      .article {
+        border-left: 0;
+        border-right: 0;
+      }
+
+      .brand {
+        padding: 14px 14px 10px;
+      }
+
+      .content {
+        padding: 14px;
+      }
+
+      .brand-name {
+        font-size: 22px;
+      }
+
+      h1 {
+        font-size: 27px;
+        line-height: 1.08;
+        letter-spacing: -.4px;
+      }
+
+      .subhead {
+        font-size: 17px;
+        line-height: 1.35;
+      }
+
+      .meta {
+        font-size: 11px;
+      }
+
+      p, li, .row, .quote {
+        font-size: 17px;
+      }
+
+      .lead {
+        font-size: 18px;
+        line-height: 1.3;
+      }
+
+      h2 {
+        font-size: 24px;
+        line-height: 1.15;
+      }
+
+      .mini-title {
+        font-size: 21px;
+      }
+
+      .hero {
+        height: auto;
+      }
+
+      .mid,
+      .small {
+        height: auto;
+      }
+
+      .img-ph img {
+        height: auto;
+        object-fit: contain;
+      }
+
+      .cta-btn {
+        font-size: 20px;
+        padding: 16px 14px;
+      }
     }
   </style>
 </head>
@@ -275,7 +339,9 @@
         <p class="subhead">“By the time most homeowners find out, the equity they spent 30 years building is already gone. And they now owe money on a mortgage they never signed.”</p>
         <div class="meta">Robert Hayes, 22-Year Real Estate Fraud Investigator &nbsp;|&nbsp; June 12, 2025 &nbsp;|&nbsp; 8:43 AM EDT</div>
 
-        <div class="img-ph hero"><img src="/htl/images/1.webp" alt="Home title theft warning" /></div>
+        <div class="img-ph hero">
+          <img src="/htl/images/1.webp" alt="Home title theft warning" />
+        </div>
 
         <p class="lead">This couple spent 27 years paying off their home.<br>A stranger owned it in 4 days.</p>
 
@@ -292,8 +358,9 @@
         <p>And by the time many homeowners find out it happened...</p>
         <p>their home — the one they worked their whole life to pay for — may already belong to someone else.</p>
 
-                <div class="img-ph hero"><img src="/htl/images/2.webp" alt="Home title theft warning" /></div>
-
+        <div class="img-ph hero">
+          <img src="/htl/images/2.webp" alt="Home title theft case example" />
+        </div>
 
         <h2>The Government Already Knows This Is Happening</h2>
 
@@ -320,7 +387,9 @@
         <p>The money disappears.</p>
         <p>And you are left with a legal nightmare that can take years — and tens of thousands of dollars — to fix.</p>
 
-        <div class="img-ph mid"><img src="/htl/images/3.webp" alt="" /></div>
+        <div class="img-ph mid">
+          <img src="/htl/images/3.webp" alt="Property fraud illustration" />
+        </div>
 
         <h2>I Investigated This Crime for 22 Years. Here’s What I Never Told My Own Neighbors.</h2>
 
@@ -373,7 +442,9 @@
         <p>Not one.</p>
         <p>Unless you do something about it.</p>
 
-        <div class="img-ph mid"><div class="img-ph mid"><img src="/htl/images/4.webp" alt="" /></div></div>
+        <div class="img-ph mid">
+          <img src="/htl/images/4.webp" alt="Home title monitoring concept" />
+        </div>
 
         <h2>The Scam Is Simpler Than You Think — And It Targets Homes Like Yours</h2>
 
@@ -412,7 +483,9 @@
         <p>Here is what almost every solution was missing:</p>
         <div class="quote">It is not enough to know your title was stolen. You need someone who will help fight to get it back.</div>
 
-        <div class="img-ph small"><div class="img-ph mid"><img src="/htl/images//5.webp" alt="" /></div></div>
+        <div class="img-ph small">
+          <img src="/htl/images/5.webp" alt="Home title fraud protection" />
+        </div>
 
         <h2>The Only System Built to Monitor, Alert, and Restore</h2>
 
@@ -454,7 +527,9 @@
           <div class="row"><div class="mark good">✓</div><div><strong>“I own three rental properties.”</strong> I did not realize none of them had any title protection. I enrolled all three. Worth every penny. — James R., Tampa FL</div></div>
         </div>
 
-        <div class="img-ph mid"><div class="img-ph mid"><img src="/htl/images/6.webp" alt="" /></div></div>
+        <div class="img-ph mid">
+          <img src="/htl/images/6.webp" alt="Satisfied homeowners" />
+        </div>
 
         <h2>The Threat Is Growing — And Your County Won’t Warn You</h2>
 
