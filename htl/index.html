@@ -12,7 +12,6 @@
       --muted: #5b6470;
       --line: #d9e0e7;
       --blue: #123a63;
-      --blue-2: #1f4f82;
       --green: #1f8a43;
       --green-2: #166a33;
       --red: #b42318;
@@ -20,7 +19,9 @@
       --max: 860px;
     }
 
-    * { box-sizing: border-box; }
+    * {
+      box-sizing: border-box;
+    }
 
     body {
       margin: 0;
@@ -36,7 +37,7 @@
       text-align: center;
       font-size: 12px;
       font-weight: 700;
-      letter-spacing: .5px;
+      letter-spacing: 0.5px;
       text-transform: uppercase;
       padding: 10px 14px;
     }
@@ -50,7 +51,7 @@
     .article {
       background: var(--card);
       border: 1px solid var(--line);
-      box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
     }
 
     .brand {
@@ -61,7 +62,7 @@
     .brand-name {
       font-size: 30px;
       font-weight: 800;
-      letter-spacing: -.4px;
+      letter-spacing: -0.4px;
       color: #0f172a;
       line-height: 1.1;
     }
@@ -81,7 +82,7 @@
       font-size: 12px;
       font-weight: 800;
       text-transform: uppercase;
-      letter-spacing: .5px;
+      letter-spacing: 0.5px;
       margin-bottom: 10px;
     }
 
@@ -90,7 +91,7 @@
       font-size: 38px;
       line-height: 1.08;
       font-weight: 800;
-      letter-spacing: -.6px;
+      letter-spacing: -0.6px;
       overflow-wrap: break-word;
     }
 
@@ -113,23 +114,18 @@
 
     .img-ph {
       width: 100%;
+      margin: 20px 0;
       background: #edf1f5;
       border: 1px solid #cfd8e3;
       border-radius: 4px;
       overflow: hidden;
-      margin: 20px 0;
     }
 
     .img-ph img {
       display: block;
       width: 100%;
-      height: 100%;
-      object-fit: cover;
+      height: auto;
     }
-
-    .hero { height: 420px; }
-    .mid { height: 300px; }
-    .small { height: 250px; }
 
     p {
       font-size: 20px;
@@ -156,7 +152,7 @@
       line-height: 1.15;
       margin: 28px 0 14px;
       font-weight: 800;
-      letter-spacing: -.3px;
+      letter-spacing: -0.3px;
     }
 
     .mini-title {
@@ -166,7 +162,8 @@
       margin: 22px 0 12px;
     }
 
-    .checklist, .xlist {
+    .checklist,
+    .xlist {
       background: var(--soft);
       border: 1px solid var(--line);
       padding: 14px 16px;
@@ -182,10 +179,23 @@
       font-size: 19px;
     }
 
-    .row:last-child { margin-bottom: 0; }
-    .mark { font-weight: 800; width: 28px; flex: 0 0 28px; }
-    .bad { color: var(--red); }
-    .good { color: var(--green); }
+    .row:last-child {
+      margin-bottom: 0;
+    }
+
+    .mark {
+      font-weight: 800;
+      width: 28px;
+      flex: 0 0 28px;
+    }
+
+    .bad {
+      color: var(--red);
+    }
+
+    .good {
+      color: var(--green);
+    }
 
     ul {
       margin: 0 0 16px;
@@ -230,21 +240,17 @@
       font-weight: 800;
       padding: 18px 20px;
       border-radius: 6px;
-      box-shadow: 0 4px 12px rgba(31,138,67,0.22);
+      box-shadow: 0 4px 12px rgba(31, 138, 67, 0.22);
     }
 
-    .cta-btn:hover { background: var(--green-2); }
+    .cta-btn:hover {
+      background: var(--green-2);
+    }
 
     .fine {
       font-size: 14px;
       color: var(--muted);
       margin-top: 10px;
-    }
-
-    .divider {
-      height: 1px;
-      background: var(--line);
-      margin: 24px 0;
     }
 
     @media (max-width: 700px) {
@@ -272,7 +278,7 @@
       h1 {
         font-size: 27px;
         line-height: 1.08;
-        letter-spacing: -.4px;
+        letter-spacing: -0.4px;
       }
 
       .subhead {
@@ -284,7 +290,10 @@
         font-size: 11px;
       }
 
-      p, li, .row, .quote {
+      p,
+      li,
+      .row,
+      .quote {
         font-size: 17px;
       }
 
@@ -300,20 +309,6 @@
 
       .mini-title {
         font-size: 21px;
-      }
-
-      .hero {
-        height: auto;
-      }
-
-      .mid,
-      .small {
-        height: auto;
-      }
-
-      .img-ph img {
-        height: auto;
-        object-fit: contain;
       }
 
       .cta-btn {
@@ -335,15 +330,32 @@
 
       <div class="content">
         <div class="eyebrow">Special Report</div>
-        <h1>Ex-Detective Exposes: “If You Own a Home in America… Criminals Can Steal It While You Sleep — And There’s Nothing Your Bank, Insurance, or Alarm System Can Do”</h1>
-        <p class="subhead">“By the time most homeowners find out, the equity they spent 30 years building is already gone. And they now owe money on a mortgage they never signed.”</p>
-        <div class="meta">Robert Hayes, 22-Year Real Estate Fraud Investigator &nbsp;|&nbsp; June 12, 2025 &nbsp;|&nbsp; 8:43 AM EDT</div>
 
-        <div class="img-ph hero">
+        <h1>
+          Ex-Detective Exposes: “If You Own a Home in America… Criminals Can
+          Steal It While You Sleep — And There’s Nothing Your Bank, Insurance,
+          or Alarm System Can Do”
+        </h1>
+
+        <p class="subhead">
+          “By the time most homeowners find out, the equity they spent 30 years
+          building is already gone. And they now owe money on a mortgage they
+          never signed.”
+        </p>
+
+        <div class="meta">
+          Robert Hayes, 22-Year Real Estate Fraud Investigator &nbsp;|&nbsp;
+          June 12, 2025 &nbsp;|&nbsp; 8:43 AM EDT
+        </div>
+
+        <div class="img-ph">
           <img src="/htl/images/1.webp" alt="Home title theft warning" />
         </div>
 
-        <p class="lead">This couple spent 27 years paying off their home.<br>A stranger owned it in 4 days.</p>
+        <p class="lead">
+          This couple spent 27 years paying off their home.<br />
+          A stranger owned it in 4 days.
+        </p>
 
         <p>If you think your front door lock protects your home...</p>
         <p>If you think your homeowners insurance has you covered...</p>
@@ -356,9 +368,12 @@
         <p>It does not even require the criminal to ever set foot near your property.</p>
 
         <p>And by the time many homeowners find out it happened...</p>
-        <p>their home — the one they worked their whole life to pay for — may already belong to someone else.</p>
+        <p>
+          their home — the one they worked their whole life to pay for — may already
+          belong to someone else.
+        </p>
 
-        <div class="img-ph hero">
+        <div class="img-ph">
           <img src="/htl/images/2.webp" alt="Home title theft case example" />
         </div>
 
@@ -379,17 +394,24 @@
         <p>This is simply how the system works.</p>
 
         <p>And criminals figured it out years ago.</p>
-<div class="img-ph mid">
+
+        <div class="img-ph">
           <img src="/htl/images/3.webp" alt="Property fraud illustration" />
         </div>
-        <div class="quote">With your public information and fake paperwork, a criminal can make it look like your home changed owners.</div>
+
+        <div class="quote">
+          With your public information and fake paperwork, a criminal can make it
+          look like your home changed owners.
+        </div>
 
         <p>Then they may take out a loan against your equity.</p>
         <p>Or sell the house to an unsuspecting buyer.</p>
         <p>The money disappears.</p>
-        <p>And you are left with a legal nightmare that can take years — and tens of thousands of dollars — to fix.</p>
+        <p>
+          And you are left with a legal nightmare that can take years — and tens
+          of thousands of dollars — to fix.
+        </p>
 
-        
         <h2>I Investigated This Crime for 22 Years. Here’s What I Never Told My Own Neighbors.</h2>
 
         <p>My name is Robert Hayes.</p>
@@ -405,17 +427,22 @@
         <p>In their name.</p>
         <p>On their property.</p>
 
-        <p>I remember one woman. She was 68 years old. Widowed. Her home was fully paid off.</p>
+        <p>
+          I remember one woman. She was 68 years old. Widowed. Her home was fully
+          paid off.
+        </p>
         <p>She found out her house had been transferred to a shell company three months earlier.</p>
         <p>By the time she called me, someone had already taken $190,000 against her equity.</p>
 
         <p>She sat in my office and asked me one question:</p>
+
         <div class="quote">“How is this even possible?”</div>
+
         <p>I did not have a good answer.</p>
         <p>Because the system allowed it.</p>
-        
-<div class="img-ph mid">
-          <img src="/htl/images/7.webp" alt="Property fraud illustration" />
+
+        <div class="img-ph">
+          <img src="/htl/images/7.webp" alt="Real estate fraud investigator" />
         </div>
 
         <h2>The Day I Retired, I Made Myself a Promise</h2>
@@ -435,17 +462,29 @@
         <p>They are not.</p>
 
         <div class="xlist">
-          <div class="row"><div class="mark bad">❌</div><div><strong>Your homeowners insurance:</strong> covers fire, flood, and theft of physical property. It does <strong>not</strong> cover title fraud.</div></div>
-          <div class="row"><div class="mark bad">❌</div><div><strong>Your identity theft protection:</strong> may watch your Social Security number and credit accounts. It does <strong>not</strong> monitor your home title.</div></div>
-          <div class="row"><div class="mark bad">❌</div><div><strong>Your bank:</strong> may call you if <em>you</em> miss a payment. It will not warn you if someone else uses your home for a fraudulent loan.</div></div>
-          <div class="row"><div class="mark bad">❌</div><div><strong>Your county recorder’s office:</strong> records documents. It does not verify whether every document filed is real.</div></div>
+          <div class="row">
+            <div class="mark bad">❌</div>
+            <div><strong>Your homeowners insurance:</strong> covers fire, flood, and theft of physical property. It does <strong>not</strong> cover title fraud.</div>
+          </div>
+          <div class="row">
+            <div class="mark bad">❌</div>
+            <div><strong>Your identity theft protection:</strong> may watch your Social Security number and credit accounts. It does <strong>not</strong> monitor your home title.</div>
+          </div>
+          <div class="row">
+            <div class="mark bad">❌</div>
+            <div><strong>Your bank:</strong> may call you if <em>you</em> miss a payment. It will not warn you if someone else uses your home for a fraudulent loan.</div>
+          </div>
+          <div class="row">
+            <div class="mark bad">❌</div>
+            <div><strong>Your county recorder’s office:</strong> records documents. It does not verify whether every document filed is real.</div>
+          </div>
         </div>
 
         <p>You have no layer of protection specifically watching your home’s title.</p>
         <p>Not one.</p>
         <p>Unless you do something about it.</p>
 
-        <div class="img-ph mid">
+        <div class="img-ph">
           <img src="/htl/images/4.webp" alt="Home title monitoring concept" />
         </div>
 
@@ -478,15 +517,28 @@
         <p>The results were disappointing.</p>
 
         <div class="xlist">
-          <div class="row"><div class="mark bad">❌</div><div><strong>County alert programs:</strong> some counties send an email after a document is filed. No restoration help. No legal support. You are on your own.</div></div>
-          <div class="row"><div class="mark bad">❌</div><div><strong>Title insurance:</strong> usually covers problems from when you bought the home. It does not normally cover fraud that happens later.</div></div>
-          <div class="row"><div class="mark bad">❌</div><div><strong>General identity protection:</strong> most do not monitor property records or title activity.</div></div>
+          <div class="row">
+            <div class="mark bad">❌</div>
+            <div><strong>County alert programs:</strong> some counties send an email after a document is filed. No restoration help. No legal support. You are on your own.</div>
+          </div>
+          <div class="row">
+            <div class="mark bad">❌</div>
+            <div><strong>Title insurance:</strong> usually covers problems from when you bought the home. It does not normally cover fraud that happens later.</div>
+          </div>
+          <div class="row">
+            <div class="mark bad">❌</div>
+            <div><strong>General identity protection:</strong> most do not monitor property records or title activity.</div>
+          </div>
         </div>
 
         <p>Here is what almost every solution was missing:</p>
-        <div class="quote">It is not enough to know your title was stolen. You need someone who will help fight to get it back.</div>
 
-        <div class="img-ph small">
+        <div class="quote">
+          It is not enough to know your title was stolen. You need someone who will
+          help fight to get it back.
+        </div>
+
+        <div class="img-ph">
           <img src="/htl/images/5.webp" alt="Home title fraud protection" />
         </div>
 
@@ -525,12 +577,21 @@
         <p>The responses were overwhelming.</p>
 
         <div class="checklist">
-          <div class="row"><div class="mark good">✓</div><div><strong>“I sleep differently now.”</strong> I spent 31 years paying for this house. Knowing someone is watching it means everything to me. — Margaret T., retired teacher, Phoenix AZ</div></div>
-          <div class="row"><div class="mark good">✓</div><div><strong>“My mother is 79 and lives alone.”</strong> After my dad died, I used to lie awake worrying about this exact thing. Home Title Lock was the first real answer I found. — David K., Dallas TX</div></div>
-          <div class="row"><div class="mark good">✓</div><div><strong>“I own three rental properties.”</strong> I did not realize none of them had any title protection. I enrolled all three. Worth every penny. — James R., Tampa FL</div></div>
+          <div class="row">
+            <div class="mark good">✓</div>
+            <div><strong>“I sleep differently now.”</strong> I spent 31 years paying for this house. Knowing someone is watching it means everything to me. — Margaret T., retired teacher, Phoenix AZ</div>
+          </div>
+          <div class="row">
+            <div class="mark good">✓</div>
+            <div><strong>“My mother is 79 and lives alone.”</strong> After my dad died, I used to lie awake worrying about this exact thing. Home Title Lock was the first real answer I found. — David K., Dallas TX</div>
+          </div>
+          <div class="row">
+            <div class="mark good">✓</div>
+            <div><strong>“I own three rental properties.”</strong> I did not realize none of them had any title protection. I enrolled all three. Worth every penny. — James R., Tampa FL</div>
+          </div>
         </div>
 
-        <div class="img-ph mid">
+        <div class="img-ph">
           <img src="/htl/images/6.webp" alt="Satisfied homeowners" />
         </div>
 
@@ -560,7 +621,10 @@
         <p>Because if a document has already been filed against your property, waiting longer can make the damage worse.</p>
 
         <div class="cta-box">
-          <a class="cta-btn" href="#">→ Check If Your Home Is Still In Your Name<br><span style="font-size:18px;font-weight:700;">Takes Less Than 60 Seconds</span></a>
+          <a class="cta-btn" href="#">
+            → Check If Your Home Is Still In Your Name<br />
+            <span style="font-size:18px;font-weight:700;">Takes Less Than 60 Seconds</span>
+          </a>
           <div class="fine">Enter your address to get your free title report. No payment required to check.</div>
           <div class="fine">Thousands of homeowners have already checked their title. Many were surprised by what they found.</div>
         </div>
