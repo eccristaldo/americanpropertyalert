@@ -316,6 +316,70 @@
         padding: 16px 14px;
       }
     }
+
+    .floating-cta {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 14px;
+  z-index: 9999;
+  display: flex;
+  justify-content: center;
+  padding: 0 14px;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(20px);
+  transition: opacity 0.25s ease, transform 0.25s ease, visibility 0.25s ease;
+  pointer-events: none;
+}
+
+.floating-cta.show {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+
+.floating-cta-btn {
+  display: block;
+  width: 100%;
+  max-width: 640px;
+  text-align: center;
+  background: #1f8a43;
+  color: #fff;
+  text-decoration: none;
+  font-size: 20px;
+  font-weight: 800;
+  line-height: 1.2;
+  padding: 16px 18px;
+  border-radius: 10px;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.18);
+}
+
+.floating-cta-btn:hover {
+  background: #166a33;
+}
+
+body.has-floating-cta {
+  padding-bottom: 90px;
+}
+
+@media (max-width: 700px) {
+  .floating-cta {
+    bottom: 10px;
+    padding: 0 10px;
+  }
+
+  .floating-cta-btn {
+    font-size: 18px;
+    padding: 15px 14px;
+    border-radius: 9px;
+  }
+
+  body.has-floating-cta {
+    padding-bottom: 84px;
+  }
+}
   </style>
 </head>
 <body>
@@ -620,16 +684,52 @@
         <p>Find out how Home Title Lock works and why so many homeowners are paying attention now.</p>
         <p>Because if a document has already been filed against your property, waiting longer can make the damage worse.</p>
 
-        <div class="cta-box">
-          <a class="cta-btn" href="#">
-            → Check If Your Home Is Still In Your Name<br />
-            <span style="font-size:18px;font-weight:700;">Takes Less Than 60 Seconds</span>
-          </a>
+     <div class="cta-box" id="final-cta">
+  <a class="cta-btn" href="#">
+    → Check If Your Home Is Still In Your Name<br />
+    <span style="font-size:18px;font-weight:700;">
+      Takes Less Than 60 Seconds
+    </span>
+  </a>
           <div class="fine">Enter your address to get your free title report. No payment required to check.</div>
           <div class="fine">Thousands of homeowners have already checked their title. Many were surprised by what they found.</div>
         </div>
       </div>
     </article>
   </div>
+  <div id="floating-cta" class="floating-cta">
+  <a href="#final-cta" class="floating-cta-btn">
+    Check Your Home Title Now
+  </a>
+</div>
+  <script>
+  (function () {
+    const floatingCta = document.getElementById('floating-cta');
+    const finalCta = document.getElementById('final-cta');
+
+    if (!floatingCta || !finalCta) return;
+
+    function toggleFloatingCTA() {
+      const scrollTop = window.scrollY || window.pageYOffset;
+      const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+      const progress = docHeight > 0 ? scrollTop / docHeight : 0;
+
+      const finalCtaTop = finalCta.getBoundingClientRect().top;
+      const finalCtaVisible = finalCtaTop < window.innerHeight - 120;
+
+      if (progress > 0.28 && !finalCtaVisible) {
+        floatingCta.classList.add('show');
+        document.body.classList.add('has-floating-cta');
+      } else {
+        floatingCta.classList.remove('show');
+        document.body.classList.remove('has-floating-cta');
+      }
+    }
+
+    window.addEventListener('scroll', toggleFloatingCTA, { passive: true });
+    window.addEventListener('resize', toggleFloatingCTA);
+    window.addEventListener('load', toggleFloatingCTA);
+  })();
+</script>
 </body>
 </html>
